@@ -24,6 +24,9 @@ public class Ribbon {
 		
 		public void update() {
 			
+			for(Button btn: this.buttons) {
+				btn.update();
+			}
 			
 		}
 		
