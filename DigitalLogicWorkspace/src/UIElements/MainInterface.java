@@ -12,8 +12,10 @@ public class MainInterface {
 			this.win = window;
 			this.topRibbon = new Ribbon(this.win);
 			
-			Button save = new Button(this.win, new PVector(10, 10), new PVector(100, 100));
+			Button save = new Button(this.win, new PVector(10, 10), new PVector(50, 50));
+			save.setName("Save");
 			this.topRibbon.addButton(save);
+			
 			
 			
 			

@@ -16,6 +16,14 @@ public class Ribbon {
 	
 		public void draw() {
 			
+			//draw the top ribbon section divider
+			
+			this.win.push();
+			this.win.stroke(218, 223, 247);
+			this.win.strokeWeight(5);
+			this.win.line(0, this.win.height / 15, this.win.width, this.win.height/15);
+			this.win.pop();
+			
 			for(Button btn: this.buttons) {
 				btn.draw();
 			}
