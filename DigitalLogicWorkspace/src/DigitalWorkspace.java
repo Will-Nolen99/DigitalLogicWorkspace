@@ -1,5 +1,7 @@
+import LogicGates.ANDGate;
 import UIElements.MainInterface;
 import processing.core.PApplet;
+import processing.core.PVector;
 
 public class DigitalWorkspace extends PApplet {
 
@@ -11,6 +13,12 @@ public class DigitalWorkspace extends PApplet {
     MainInterface mainUI = new MainInterface(this);
     int backgroundColor = color(42, 45, 52);
     
+    
+    ANDGate and = new ANDGate();
+    
+    
+    
+    
     public void settings(){
         size(1920, 1080);
     }
@@ -20,6 +28,9 @@ public class DigitalWorkspace extends PApplet {
         background(backgroundColor);
         stroke(255);
         strokeWeight(10);
+        
+        and.setCoords(new PVector(width/2, height/2));
+        
     }
 
     public void draw(){
@@ -27,10 +38,10 @@ public class DigitalWorkspace extends PApplet {
     	mainUI.draw();
     	mainUI.update();
     	
+    	and.draw(this);
+    	and.update(this);
     	
-    	
-    	
-    	
+   
     	//Draw the mouse coords to screen for development purposes
     	
     	int x = mouseX;
@@ -42,4 +53,9 @@ public class DigitalWorkspace extends PApplet {
     	
     	
     }
+    
+    public void mousePressed() {
+    	and.clicked(this);
+    }
+    
 }

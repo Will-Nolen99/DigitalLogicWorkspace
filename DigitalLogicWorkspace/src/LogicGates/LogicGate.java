@@ -1,18 +1,15 @@
 package LogicGates;
 
-import processing.core.PVector;
+import processing.core.PApplet;
 
 abstract class LogicGate {
 
-	private String type;
-	private boolean[] inputs;
-	private boolean[] outputs;
-	private PVector coords;
-	private boolean hovered;
+	protected boolean[] inputs;
+	protected boolean[] outputs;
 	
-	public abstract void update();
+	public abstract void update(PApplet win);
 	
-	public abstract void draw();
+	public abstract void draw(PApplet win);
 	
 	public boolean getOutput(int channel) {
 		
@@ -25,6 +22,9 @@ abstract class LogicGate {
 	}
 	
 	abstract void compute();
+
+
+
 	
 	
 	
