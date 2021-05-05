@@ -37,8 +37,8 @@ public class DigitalWorkspace extends PApplet {
     	int y = mouseY;
     	
     	textSize(32);
-    	text("X: " + x, 100, height - 100);
-    	text("Y: " +y, 100, height - 50);
+    	text("X: " + x, 10, height - 100);
+    	text("Y: " +y, 10, height - 50);
     	
     	
     }

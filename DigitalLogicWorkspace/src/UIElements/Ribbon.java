@@ -3,15 +3,18 @@ package UIElements;
 import java.util.ArrayList;
 
 import processing.core.PApplet;
+import processing.core.PVector;
 
 public class Ribbon {
 	
 	private PApplet win;
 	private ArrayList<Button> buttons;
+	PVector divider;
 	
-		public Ribbon(PApplet window) {
+		public Ribbon(PApplet window, PVector verticalOffset) {
 			this.win = window;
 			buttons = new ArrayList<Button>();
+		    this.divider = verticalOffset;
 		}
 	
 		public void draw() {
@@ -21,7 +24,8 @@ public class Ribbon {
 			this.win.push();
 			this.win.stroke(218, 223, 247);
 			this.win.strokeWeight(5);
-			this.win.line(0, this.win.height / 15, this.win.width, this.win.height/15);
+			this.win.line(this.divider.x, this.divider.y, this.win.width, this.divider.y);
+			
 			this.win.pop();
 			
 			for(Button btn: this.buttons) {

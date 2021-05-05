@@ -9,8 +9,8 @@ public class Button {
 	private PVector coords;
 	private PVector size;
 	boolean hovered;
-	int[] primary = {255, 255, 255};
-	int[] secondary = {0, 0, 0};
+	int[] primary = {218, 223, 247};
+	int[] secondary = {32, 129, 195};
 	int[] textColor = {0, 0, 0};
 	String name = "";
 	
