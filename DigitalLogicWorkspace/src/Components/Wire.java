@@ -13,12 +13,24 @@ public class Wire {
 	private boolean state;
 	
 	
-	public Wire() {
-		
+	public Wire(Terminal start) {
+		if(start.getType().equals("in")) {
+			this.input = start;
+		}else {
+			this.output = start;
+		}
 	}
 	
 	public void creation(PApplet win) {
 		
+	}
+	
+	public void connect(Terminal terminal) {
+		if (this.input == null) {
+			this.input = terminal;
+		} else {
+			this.output = terminal;
+		}
 	}
 	
 	

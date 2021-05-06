@@ -34,6 +34,25 @@ public class Terminal {
 		this.type = type;
 	}
 	
+	
+	public boolean clicked(PApplet win) {
+		
+		int mx = win.mouseX;
+		int my = win.mouseY;
+		
+		int x = (int) this.coords.x;
+		int y = (int) this.coords.y;
+		
+		return 10 >= PApplet.dist(x, y, mx, my);
+			
+
+	}
+	
+	public String getType() {
+		return this.type;
+	}
+	
+	
 	public void draw(PApplet win) {
 		
 		win.push();

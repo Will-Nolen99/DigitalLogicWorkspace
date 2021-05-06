@@ -21,6 +21,10 @@ public class MainInterface {
 			this.workspace.addGate(and);
 			and.setCoords(new PVector(50, 50));
 			
+			LogicGate and2 = new ANDGate();
+			this.workspace.addGate(and2);
+			and2.setCoords(new PVector(570, 50));
+			
 			
 			this.topRibbon = new Ribbon(this.win, new PVector(0, 75));
 			

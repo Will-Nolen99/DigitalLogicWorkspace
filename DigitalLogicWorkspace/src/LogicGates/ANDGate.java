@@ -1,5 +1,7 @@
 package LogicGates;
 
+import java.util.ArrayList;
+
 import Components.Terminal;
 import processing.core.PApplet;
 import processing.core.PConstants;
@@ -62,16 +64,30 @@ public class ANDGate extends LogicGate {
 		int x = (int) this.coords.x;
 		int y = (int) this.coords.y;
 		
-		int offset = this.width/3;
+		int offset = this.width/4;
 		
 		
 		
 		this.inputA.setCoords(new PVector(x - 10, y + offset));
-		this.inputB.setCoords(new PVector(x - 10, y + 2 *offset));
+		this.inputB.setCoords(new PVector(x - 10, y + 3 *offset));
 		this.output.setCoords(new PVector( x + this.width + 10, y + this.width /2));
 		
 	}
 
+	
+	public ArrayList<Terminal> getTerminals(){
+		
+		ArrayList<Terminal> terminals = new ArrayList<Terminal>();
+		
+		terminals.add(inputA);
+		terminals.add(inputB);
+		terminals.add(output);
+		
+		
+		return terminals;
+		
+	}
+	
 
 	public void clicked(PApplet win) {
 		
@@ -84,7 +100,8 @@ public class ANDGate extends LogicGate {
 					
 					
 					
-				}
+		}
+
 		
 		
 	}
@@ -114,11 +131,11 @@ public class ANDGate extends LogicGate {
 		win.arc(x + this.width/2, y + this.width/2, this.width, this.width, -PConstants.HALF_PI, PConstants.HALF_PI);
 		
 		//draw terminals of and gate
-		int offset = this.width/3;
+		int offset = this.width/4;
 		
 		//input
 		win.line(x, y + offset, x - 10, y + offset);
-		win.line(x, y + 2 * offset, x - 10, y + 2 * offset);
+		win.line(x, y + 3 * offset, x - 10, y + 3 * offset);
 		
 		//output
 		win.line(x+ this.width, y + this.width/2, x + this.width + 10, y + this.width /2);
@@ -133,6 +150,9 @@ public class ANDGate extends LogicGate {
 		
 		
 	}
+	
+	
+	
 
 	@Override
 	void compute() {

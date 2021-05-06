@@ -1,5 +1,8 @@
 package LogicGates;
 
+import java.util.ArrayList;
+
+import Components.Terminal;
 import processing.core.PApplet;
 import processing.core.PVector;
 
@@ -27,6 +30,8 @@ public abstract class LogicGate {
 	public abstract void setCoords(PVector pVector);
 
 	public abstract void clicked(PApplet win);
+
+	public abstract ArrayList<Terminal> getTerminals();
 
 
 

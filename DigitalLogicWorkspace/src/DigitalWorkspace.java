@@ -39,8 +39,6 @@ public class DigitalWorkspace extends PApplet {
     	mainUI.draw();
     	mainUI.update();
     	
-    	and.draw(this);
-    	and.update(this);
     	
    
     	//Draw the mouse coords to screen for development purposes
@@ -56,7 +54,6 @@ public class DigitalWorkspace extends PApplet {
     }
     
     public void mousePressed() {
-    	and.clicked(this);
     	mainUI.clicked();
     }
     
