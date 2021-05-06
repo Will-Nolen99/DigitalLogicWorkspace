@@ -1,8 +1,9 @@
 package LogicGates;
 
 import processing.core.PApplet;
+import processing.core.PVector;
 
-abstract class LogicGate {
+public abstract class LogicGate {
 
 	protected boolean[] inputs;
 	protected boolean[] outputs;
@@ -22,6 +23,10 @@ abstract class LogicGate {
 	}
 	
 	abstract void compute();
+
+	public abstract void setCoords(PVector pVector);
+
+	public abstract void clicked(PApplet win);
 
 
 

@@ -1,4 +1,4 @@
-import LogicGates.ANDGate;
+import LogicGates.ANDGate; 
 import UIElements.MainInterface;
 import processing.core.PApplet;
 import processing.core.PVector;
@@ -15,6 +15,7 @@ public class DigitalWorkspace extends PApplet {
     
     
     ANDGate and = new ANDGate();
+    
     
     
     
@@ -56,6 +57,7 @@ public class DigitalWorkspace extends PApplet {
     
     public void mousePressed() {
     	and.clicked(this);
+    	mainUI.clicked();
     }
     
 }

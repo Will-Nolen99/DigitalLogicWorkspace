@@ -1,5 +1,6 @@
 package LogicGates;
 
+import Components.Terminal;
 import processing.core.PApplet;
 import processing.core.PConstants;
 import processing.core.PVector;
@@ -11,6 +12,9 @@ public class ANDGate extends LogicGate {
 	private boolean hovered;
 	private boolean moving = false;
 	private PVector mouseOffset = new PVector();
+	private Terminal inputA = new Terminal("in");
+	private Terminal inputB = new Terminal("in");
+	private Terminal output = new Terminal("out");
 	
 	private int width = 50;
 	
@@ -19,11 +23,13 @@ public class ANDGate extends LogicGate {
 	public ANDGate() {
 		outputs = new boolean[1];
 		inputs = new boolean[2];
+		
 	}
 	
 	
 	public void setCoords(PVector coords) {
 		this.coords = coords;
+		this.updateTerminals();
 	}
 
 	@Override
@@ -44,12 +50,29 @@ public class ANDGate extends LogicGate {
 			this.coords.y = win.mouseY - this.mouseOffset.y;
 			
 			this.moving = win.mousePressed;
+			this.updateTerminals();
 			
 		}
 		
 		
 	}
 	
+	private void updateTerminals() {
+		
+		int x = (int) this.coords.x;
+		int y = (int) this.coords.y;
+		
+		int offset = this.width/3;
+		
+		
+		
+		this.inputA.setCoords(new PVector(x - 10, y + offset));
+		this.inputB.setCoords(new PVector(x - 10, y + 2 *offset));
+		this.output.setCoords(new PVector( x + this.width + 10, y + this.width /2));
+		
+	}
+
+
 	public void clicked(PApplet win) {
 		
 		if(this.hovered && win.mouseButton == PConstants.LEFT) {
@@ -57,6 +80,9 @@ public class ANDGate extends LogicGate {
 					this.moving = true;
 					this.mouseOffset.x = win.mouseX - this.coords.x;
 					this.mouseOffset.y = win.mouseY - this.coords.y;
+					
+					
+					
 					
 				}
 		
@@ -100,6 +126,11 @@ public class ANDGate extends LogicGate {
 		
 		
 		win.pop();
+		
+		this.inputA.draw(win);
+		this.inputB.draw(win);
+		this.output.draw(win);
+		
 		
 	}
 
