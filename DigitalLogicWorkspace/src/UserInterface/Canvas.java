@@ -37,8 +37,23 @@ public class Canvas {
 		
 		Terminal t = new Terminal(coords);
 		this.terminals.add(t);
-		Wire w = new Wire(t);
-		this.wires.add(w);
+		
+		boolean makingWire = false;
+		
+		for(Wire w:this.wires) {
+			
+			if(w.getMaking()) {
+				makingWire = true;
+				w.setEnd(t);
+			}
+			
+		}
+		
+		if(!makingWire) {
+			Wire w = new Wire(t);
+			this.wires.add(w);
+		}
+
 		
 	}
 	

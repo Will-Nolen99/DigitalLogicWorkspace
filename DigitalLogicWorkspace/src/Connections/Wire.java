@@ -20,6 +20,14 @@ public class Wire {
 		this.making = true;
 	}
 	
+	public boolean getMaking() {
+		return this.making;
+	}
+	
+	public void setEnd(Terminal end) {
+		this.end = end;
+		this.making = false;
+	}
 	
 	public void draw(PApplet win) {
 		
@@ -28,19 +36,33 @@ public class Wire {
 		win.strokeWeight(5);
 		win.stroke(0);
 		
-		
-		if(this.making) {
+			int startX;
+			int startY;
+			int endX;
+			int endY;
+			int deltaX;
+			int deltaY;
 			
-			PVector startCoords = start.getCoords();
 			
-			int startX = (int) startCoords.x;
-			int startY = (int) startCoords.y;
+			PVector startCoords = this.start.getCoords();
 			
-			int endX = win.mouseX;
-			int endY = win.mouseY;
+			startX = (int) startCoords.x;
+			startY = (int) startCoords.y;
 			
-			int deltaX = PApplet.abs(startX - endX);
-			int deltaY = PApplet.abs(startY - endY);
+			
+			if(this.making) {
+				endX = win.mouseX;
+				endY = win.mouseY;
+			} else {
+				PVector endCoords = this.end.getCoords();
+				endX = (int) endCoords.x;
+				endY = (int) endCoords.y;
+			}
+
+			
+			deltaX = PApplet.abs(startX - endX);
+			deltaY = PApplet.abs(startY - endY);
+
 			
 			
 			//draw the smaller line first
@@ -58,7 +80,7 @@ public class Wire {
 			
 			
 
-		}
+		
 		
 		
 		win.pop();
