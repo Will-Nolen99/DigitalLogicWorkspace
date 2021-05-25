@@ -1,5 +1,4 @@
-import LogicGates.ANDGate; 
-import UIElements.MainInterface;
+
 import processing.core.PApplet;
 import processing.core.PVector;
 
@@ -10,11 +9,10 @@ public class DigitalWorkspace extends PApplet {
         PApplet.main("DigitalWorkspace");
     }
 
-    MainInterface mainUI = new MainInterface(this);
-    int backgroundColor = color(42, 45, 52);
+
     
     
-    ANDGate and = new ANDGate();
+
     
     
     
@@ -26,18 +24,17 @@ public class DigitalWorkspace extends PApplet {
 
     
     public void setup(){
-        background(backgroundColor);
+        background(255);
         stroke(255);
         strokeWeight(10);
         
-        and.setCoords(new PVector(width/2, height/2));
+      
         
     }
 
     public void draw(){
-    	background(backgroundColor);
-    	mainUI.draw();
-    	mainUI.update();
+    	background(255);
+
     	
     	
    
@@ -54,7 +51,7 @@ public class DigitalWorkspace extends PApplet {
     }
     
     public void mousePressed() {
-    	mainUI.clicked();
+    	
     }
     
 }
