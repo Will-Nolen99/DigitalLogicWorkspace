@@ -30,6 +30,13 @@ public class Terminal {
 		win.pop();
 		
 	}
+
+
+
+	public PVector getCoords() {
+
+		return this.coords;
+	}
 	
 	
 	
