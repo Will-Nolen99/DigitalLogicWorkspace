@@ -1,19 +1,16 @@
 
-import java.util.ArrayList;
-
-import Connections.Terminal;
+import UserInterface.MainUi;
 import processing.core.PApplet;
 import processing.core.PVector;
 
+
 public class DigitalWorkspace extends PApplet {
 
+	private MainUi ui = new MainUi();
     
     public static void main(String[] args) {
         PApplet.main("DigitalWorkspace");
     }
-
-    
-    ArrayList<Terminal> terminals = new ArrayList<Terminal>();
     
     public void settings(){
         size(1920, 1080);
@@ -32,7 +29,6 @@ public class DigitalWorkspace extends PApplet {
     	
 
     	//Draw the mouse coords to screen for development purposes
-    	
     	int x = mouseX;
     	int y = mouseY;
     	
@@ -44,12 +40,11 @@ public class DigitalWorkspace extends PApplet {
     	text("Y: " +y, 10, height - 50);
     	
     	
-    	for(Terminal t: terminals) {
-    		t.draw(this);
-    	}
+    	
+    	this.ui.draw(this);
     	
     	
-    	
+
     }
     
     public void mousePressed() {
@@ -57,9 +52,7 @@ public class DigitalWorkspace extends PApplet {
     	int x = mouseX;
     	int y = mouseY;
     	
-    	
-    	terminals.add(new Terminal(new PVector(x, y)));
-    	
+    	this.ui.click(new PVector(x, y));
     	
     }
     
