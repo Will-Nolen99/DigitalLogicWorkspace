@@ -33,7 +33,7 @@ public class Wire {
 		
 		win.push();
 		
-		win.strokeWeight(5);
+		win.strokeWeight(2);
 		win.stroke(0);
 		
 
