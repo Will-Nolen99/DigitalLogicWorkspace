@@ -60,18 +60,25 @@ public class Wire {
 			int deltaY = PApplet.abs(startY - endY);
 
 			
-			
-			//draw the smaller line first
-			if(deltaX < deltaY) {
-				
-				win.line(startX, startY, endX, startY);
-				win.line(endX, startY, endX, endY);
-				
+	
+			if (PApplet.abs(deltaX) < PApplet.abs(deltaY)) {
+
+				if (endY - startY < 0) {
+					deltaX = -deltaX;
+				}
+
+				win.line(startX, startY, startX, (endY - deltaX));
+				win.line(startX, (endY - deltaX), endX, endY);
+
 			} else {
-				
-				win.line(startX, startY, startX, endY);
-				win.line(startX, endY, endX, endY);
-				
+
+				if (endX - startX < 0) {
+					deltaY = -deltaY;
+				}
+
+				win.line(startX, startY, (endX - deltaY), startY);
+				win.line((endX - deltaY), startY, endX, endY);
+
 			}
 			
 			
