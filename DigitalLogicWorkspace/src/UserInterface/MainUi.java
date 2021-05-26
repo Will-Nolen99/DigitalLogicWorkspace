@@ -25,7 +25,7 @@ public class MainUi {
 	}
 	
 	public void click(PVector coords) {
-		this.canvas.click(coords);
+		this.canvas.leftClick(coords);
 	}
 	
 	

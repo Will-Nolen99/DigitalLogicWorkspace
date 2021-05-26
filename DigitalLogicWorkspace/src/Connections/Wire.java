@@ -36,18 +36,14 @@ public class Wire {
 		win.strokeWeight(5);
 		win.stroke(0);
 		
-			int startX;
-			int startY;
+
 			int endX;
 			int endY;
-			int deltaX;
-			int deltaY;
-			
-			
+
 			PVector startCoords = this.start.getCoords();
 			
-			startX = (int) startCoords.x;
-			startY = (int) startCoords.y;
+			int startX = (int) startCoords.x;
+			int startY = (int) startCoords.y;
 			
 			
 			if(this.making) {
@@ -60,8 +56,8 @@ public class Wire {
 			}
 
 			
-			deltaX = PApplet.abs(startX - endX);
-			deltaY = PApplet.abs(startY - endY);
+			int deltaX = PApplet.abs(startX - endX);
+			int deltaY = PApplet.abs(startY - endY);
 
 			
 			
@@ -85,6 +81,11 @@ public class Wire {
 		
 		win.pop();
 		
+	}
+
+	public Terminal getStart() {
+		
+		return this.start;
 	}
 	
 	

@@ -34,8 +34,20 @@ public class Terminal {
 
 
 	public PVector getCoords() {
-
 		return this.coords;
+	}
+	
+	@Override
+	public boolean equals(Object t) {
+		
+		if(t.getClass() == this.getClass()) {
+			
+		return ((Terminal) t).getCoords().equals(this.coords);
+		
+		}
+	
+		return false;
+		
 	}
 	
 	
