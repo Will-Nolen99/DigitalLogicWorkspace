@@ -7,6 +7,11 @@ import Connections.Wire;
 import processing.core.PApplet;
 import processing.core.PVector;
 
+
+/*
+ * Class used for the workspace portion of the UI. 
+ * Provides functionality of moving and connecting components.
+ */
 public class Canvas {
 
 	ArrayList<Terminal> terminals = new ArrayList<Terminal>();
@@ -16,6 +21,8 @@ public class Canvas {
 
 	}
 
+	
+	// Draws each of the components currently in the workspace to the screen
 	public void draw(PApplet win) {
 
 		for (Terminal t : this.terminals) {
@@ -38,7 +45,6 @@ public class Canvas {
 		
 		
 		//get the current wire being created 
-		
 		Wire currentWire = null;
 		
 		for(Wire w: this.wires) {
@@ -51,10 +57,9 @@ public class Canvas {
 		// see if the user clicked on a terminal
 
 		for (Terminal t: this.terminals) {
-			
 			PVector tCoords = t.getCoords();
 			
-			if(10 >= PApplet.dist(tCoords.x, tCoords.y, coords.x, coords.y)) {
+			if(Terminal.size / 2.0 >= PApplet.dist(tCoords.x, tCoords.y, coords.x, coords.y)) {
 				
 				createTerminal = false;
 				

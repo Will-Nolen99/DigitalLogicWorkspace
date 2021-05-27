@@ -6,7 +6,7 @@ import processing.core.PVector;
 public class Terminal {
 
 	private PVector coords;
-	private final int size = 15;
+	public final static int size = 15;
 	
 	public Terminal(PVector coords) {
 		
@@ -25,7 +25,7 @@ public class Terminal {
 		
 		win.noFill()
 ;		
-		win.circle(this.coords.x, this.coords.y, this.size);
+		win.circle(this.coords.x, this.coords.y, Terminal.size);
 		
 		win.pop();
 		
