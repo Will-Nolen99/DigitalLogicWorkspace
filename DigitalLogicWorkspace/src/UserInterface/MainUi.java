@@ -1,6 +1,7 @@
 package UserInterface;
 
 import processing.core.PApplet;
+import processing.core.PConstants;
 import processing.core.PVector;
 
 public class MainUi {
@@ -24,8 +25,15 @@ public class MainUi {
 		
 	}
 	
-	public void click(PVector coords) {
-		this.canvas.leftClick(coords);
+	public void click(PVector coords, PApplet window) {
+		
+		
+		
+		if(window.mouseButton == PConstants.LEFT) {
+			this.canvas.leftClick(coords);
+		}
+		
+		
 	}
 	
 	

@@ -52,7 +52,7 @@ public class DigitalWorkspace extends PApplet {
     	int x = mouseX;
     	int y = mouseY;
     	
-    	this.ui.click(new PVector(x, y));
+    	this.ui.click(new PVector(x, y), this);
     	
     }
     
