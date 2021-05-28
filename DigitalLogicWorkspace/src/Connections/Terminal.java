@@ -1,5 +1,7 @@
 package Connections;
 
+import java.util.ArrayList;
+
 import processing.core.PApplet;
 import processing.core.PVector;
 
@@ -7,10 +9,13 @@ public class Terminal {
 
 	private PVector coords;
 	public final static int size = 15;
+	private ArrayList<Wire> connections;
+	
 	
 	public Terminal(PVector coords) {
 		
 		this.coords = coords;
+		this.connections = new ArrayList<Wire>();
 		
 	}
 	
@@ -31,7 +36,9 @@ public class Terminal {
 		
 	}
 
-
+    public void addWire(Wire wire) {
+    	this.connections.add(wire);
+    }
 
 	public PVector getCoords() {
 		return this.coords;
