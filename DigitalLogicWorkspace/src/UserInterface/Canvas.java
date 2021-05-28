@@ -62,11 +62,14 @@ public class Canvas {
 				// Set the current wire's end position if a different terminal was clicked
 				if (currentWire != null && !currentWire.getStart().equals(t)) {
 					currentWire.setEnd(t);
-				} else if (currentWire == null) { // TODO remove this double tested condition, removing the second
-													// condition causes 2 wires to be built in the same location if the
-													// same terminal is clicked twice in a row.
+					t.addWire(currentWire);
+				} else if (currentWire == null) { 
+					// TODO remove this double tested condition, removing the second
+					// condition causes 2 wires to be built in the same location if the
+					// same terminal is clicked twice in a row.
 					Wire wire = new Wire(t);
 					this.wires.add(wire);
+					t.addWire(wire);
 				}
 
 			}
@@ -80,9 +83,11 @@ public class Canvas {
 
 			if (currentWire != null) {
 				currentWire.setEnd(t);
+				t.addWire(currentWire);
 			} else {
 				Wire w = new Wire(t);
 				this.wires.add(w);
+				t.addWire(w);
 			}
 
 		}
