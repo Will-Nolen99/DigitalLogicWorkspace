@@ -5,6 +5,10 @@ import java.util.ArrayList;
 import processing.core.PApplet;
 import processing.core.PVector;
 
+
+/*
+ * Class that represents wires used to connect components in the workspace
+ */
 public class Wire {
 
 	private Terminal start;
@@ -45,7 +49,7 @@ public class Wire {
 			int startX = (int) startCoords.x;
 			int startY = (int) startCoords.y;
 			
-			
+			// Get the correct end point for the wire depending on if it is created or not
 			if(this.making) {
 				endX = win.mouseX;
 				endY = win.mouseY;
@@ -59,10 +63,9 @@ public class Wire {
 			int deltaX = PApplet.abs(startX - endX);
 			int deltaY = PApplet.abs(startY - endY);
 
-			
-	
+			//Draw the 2 line segment wire depending on how the start and end point are located
 			if (PApplet.abs(deltaX) < PApplet.abs(deltaY)) {
-
+				
 				if (endY - startY < 0) {
 					deltaX = -deltaX;
 				}
@@ -81,18 +84,17 @@ public class Wire {
 
 			}
 			
-			
 
-		
-		
-		
 		win.pop();
 		
 	}
 
 	public Terminal getStart() {
-		
 		return this.start;
+	}
+
+	public Terminal getEnd() {
+		return this.end;
 	}
 	
 	

@@ -44,7 +44,7 @@ public class MainUi {
 		if(window.mouseButton == PConstants.LEFT) {
 			this.canvas.leftClick(coords);
 		} else if (window.mouseButton == PConstants.RIGHT) {
-			//TODO add right click functionality
+			this.canvas.rightClick(coords);
 		} else {
 			//TODO add other click functionality
 		}
