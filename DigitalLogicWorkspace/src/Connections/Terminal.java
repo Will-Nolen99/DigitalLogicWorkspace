@@ -63,6 +63,11 @@ public class Terminal {
 		
 	}
 	
+	@Override
+	public String toString() {
+		return "" + this.coords.x + "" + this.coords.y;
+	}
+	
 	public boolean isHovered() {
 		return this.hovered;
 	}
