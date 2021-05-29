@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 import Connections.Terminal;
 import Connections.Wire;
+import LogicGates.ANDGate;
+import LogicGates.LogicGate;
 import processing.core.PApplet;
 import processing.core.PVector;
 
@@ -15,13 +17,18 @@ public class Canvas {
 
 	ArrayList<Terminal> terminals = new ArrayList<Terminal>();
 	ArrayList<Wire> wires = new ArrayList<Wire>();
+	ArrayList<LogicGate> gates = new ArrayList<LogicGate>();
 
 	public Canvas() {
-
+		this.gates.add(new ANDGate());
 	}
 
 	// Draws each of the components currently in the workspace to the screen
 	public void draw(PApplet win) {
+		
+		for(LogicGate gate: this.gates) {
+			gate.draw(win);
+		}
 
 		for (Terminal t : this.terminals) {
 			t.draw(win);
