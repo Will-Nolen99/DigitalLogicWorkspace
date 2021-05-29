@@ -33,8 +33,17 @@ public class Canvas {
 
 	}
 
-	public void update() {
+	public void update(PApplet win) {
 
+		int x = win.mouseX;
+		int y = win.mouseY;
+		
+		PVector coords = new PVector(x, y);
+		
+		for(Terminal t: this.terminals) {
+			t.update(coords);
+		}
+		
 	}
 
 	public void leftClick(PVector coords) {
@@ -107,7 +116,7 @@ public class Canvas {
 				
 					for(int j = this.wires.size() - 1; j >= 0; j--) {
 						Wire wire = this.wires.get(j);
-						if(wire.getStart().equals(terminal) || wire.getEnd().equals(terminal)) {
+						if(wire.getStart().equals(terminal) || wire.getEnd() == null || wire.getEnd().equals(terminal)) {
 							this.wires.remove(wire);
 						}
 					}

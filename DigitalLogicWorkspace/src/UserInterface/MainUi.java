@@ -18,9 +18,7 @@ public class MainUi {
 	}
 	
 	
-	public void update() {
-		
-	}
+
 	
 	/*
 	 * Draws each of the ui elements to the screen.
@@ -33,6 +31,10 @@ public class MainUi {
 		
 	}
 	
+	
+	public void update(PApplet window) {
+		this.canvas.update(window);
+	}
 	
 	/*
 	 * Method called when the window is clicked.

@@ -60,6 +60,10 @@ public class DigitalWorkspace extends PApplet {
     	this.ui.draw(this);
     	
     	
+    	//Calls update to the UI class. updates status of objects on the screen
+    	this.ui.update(this);
+    	
+    	
 
     }
     

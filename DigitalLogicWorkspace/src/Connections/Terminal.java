@@ -10,6 +10,7 @@ public class Terminal {
 	private PVector coords;
 	public final static int size = 15;
 	private ArrayList<Wire> connections;
+	boolean hovered = false;
 	
 	
 	public Terminal(PVector coords) {
@@ -54,6 +55,17 @@ public class Terminal {
 		}
 	
 		return false;
+		
+	}
+	
+	public boolean isHovered() {
+		return this.hovered;
+	}
+
+
+
+	public void update(PVector coords) {
+		
 		
 	}
 	
