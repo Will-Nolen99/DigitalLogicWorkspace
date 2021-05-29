@@ -26,7 +26,12 @@ public class Terminal {
 		
 		win.push();
 		
-		win.stroke(0);
+		if(this.hovered) {
+			win.stroke(180, 30, 30);
+		} else {
+			win.stroke(0);
+		}
+		
 		win.strokeWeight(2);
 		
 		win.noFill()
@@ -66,6 +71,11 @@ public class Terminal {
 
 	public void update(PVector coords) {
 		
+		if(Terminal.size / 2.0 >= PApplet.dist(coords.x, coords.y, this.coords.x, this.coords.y)) {
+			this.hovered = true;
+		} else {
+			this.hovered = false;
+		}
 		
 	}
 	

@@ -62,9 +62,8 @@ public class Canvas {
 		// see if the user clicked on a terminal
 
 		for (Terminal t : this.terminals) {
-			PVector tCoords = t.getCoords();
 
-			if (Terminal.size / 2.0 >= PApplet.dist(tCoords.x, tCoords.y, coords.x, coords.y)) {
+			if (t.isHovered()) {
 
 				createTerminal = false;
 
@@ -111,8 +110,7 @@ public class Canvas {
 		for (int i = this.terminals.size() - 1; i >= 0; i--) {
 
 			Terminal terminal = this.terminals.get(i);
-			PVector tCoords = terminal.getCoords();
-			if (Terminal.size / 2.0 >= PApplet.dist(tCoords.x, tCoords.y, coords.x, coords.y)) {
+			if (terminal.isHovered()) {
 				
 					for(int j = this.wires.size() - 1; j >= 0; j--) {
 						Wire wire = this.wires.get(j);
