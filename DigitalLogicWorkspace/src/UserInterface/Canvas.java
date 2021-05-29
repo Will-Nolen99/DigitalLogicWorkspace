@@ -72,9 +72,11 @@ public class Canvas {
 					currentWire.setEnd(t);
 					t.addWire(currentWire);
 				} else if (currentWire == null) { 
+					
 					// TODO remove this double tested condition, removing the second
 					// condition causes 2 wires to be built in the same location if the
 					// same terminal is clicked twice in a row.
+					
 					Wire wire = new Wire(t);
 					this.wires.add(wire);
 					t.addWire(wire);
