@@ -47,6 +47,10 @@ public class Canvas {
 		
 		PVector coords = new PVector(x, y);
 		
+		for(LogicGate gate: this.gates) {
+			gate.update(coords);
+		}
+		
 		for(Terminal t: this.terminals) {
 			t.update(coords);
 		}

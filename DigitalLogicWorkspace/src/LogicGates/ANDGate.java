@@ -11,6 +11,10 @@ public class ANDGate implements LogicGate {
 	private Terminal input2;
 	private Terminal output;
 	
+	private boolean hovered;
+	
+	static int width = 50;
+	
 	public ANDGate() {
 		
 		this.coords = new PVector(500, 500);
@@ -34,14 +38,20 @@ public class ANDGate implements LogicGate {
 		win.push();
 		
 		win.strokeWeight(2);
-		win.stroke(0);
+		
+		if (this.hovered) {
+			win.stroke(125, 30, 30);
+		} else {
+			win.stroke(0);
+		}
+
 		win.noFill();
 		
 		//Outline of gate
-		win.line(x, y, x, y + 50);
-		win.line(x,  y + 50, x + 25, y + 50);
-		win.arc(x + 25, y + 25, 50, 50, -PApplet.HALF_PI, PApplet.HALF_PI);
-		win.line(x, y, x + 25, y);
+		win.line(x, y, x, y + ANDGate.width);
+		win.line(x,  y + ANDGate.width, x + ANDGate.width / 2, y + ANDGate.width);
+		win.arc(x + ANDGate.width / 2, y + ANDGate.width / 2, ANDGate.width, ANDGate.width, -PApplet.HALF_PI, PApplet.HALF_PI);
+		win.line(x, y, x + ANDGate.width / 2, y);
 		
 		//terminal points
 		
@@ -58,8 +68,15 @@ public class ANDGate implements LogicGate {
 	}
 
 	@Override
-	public void update() {
-		// TODO Auto-generated method stub
+	public void update(PVector mouse) {
+		
+		int x = (int) this.coords.x;
+		int y = (int) this.coords.y;
+		
+		this.hovered = mouse.x > x && mouse.x < x + ANDGate.width && mouse.y > y && mouse.y < y + ANDGate.width;
+		
+		
+		
 		
 	}
 
